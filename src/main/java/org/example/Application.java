@@ -33,7 +33,11 @@ public class Application {
                 String storageType=inputDevice.getString();
                 outputDevice.writeMessage("Please input storage size:");
                 Integer storageSize=inputDevice.getInteger();
-                StorageInventory storageInv = new StorageInventory(storageName,storageSize,storageType);
+                outputDevice.writeMessage("Please input storage stack-ability status:");
+                Boolean stackable=inputDevice.getBoolean();
+                outputDevice.writeMessage("Please input storage signal accepting status:");
+                Boolean getssignal=inputDevice.getBoolean();
+                StorageInventory storageInv = new StorageInventory(storageName,storageSize,stackable,storageType,getssignal);
                 inventory.addStorage(storageInv);
                 outputDevice.writeMessage("\n");
                 break;

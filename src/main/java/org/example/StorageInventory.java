@@ -1,26 +1,24 @@
 package org.example;
 
-public class StorageInventory  {
-    private String storageName;
+import java.util.ArrayList;
+
+public class StorageInventory extends Storage {
+
     private Integer storageCapacity;
-    private String storageType;
-    private String[] storageSlots;
-    public StorageInventory(String storageName, Integer storageCapacity, String storageType) {
-        this.storageName = storageName;
+    private ArrayList<ArrayList<Item>> storageSlots;
+
+    public StorageInventory(String storageName, Integer storageCapacity, Boolean stackable, String storageType, Boolean getssignal) {
+
+        super(storageName, storageType, stackable, getssignal);
         this.storageCapacity = storageCapacity;
-        this.storageType = storageType;
-        this.storageSlots = new String[storageCapacity];
+        this.storageSlots = new ArrayList<>();
     }
-    public String getStorageName() {
-        return storageName;
-    }
+
     public int getStorageCapacity() {
         return storageCapacity;
     }
-    public String getStorageType() {
-        return storageType;
-    }
-    public String[] getStorageSlots() {
+
+    public ArrayList<ArrayList<Item>> getStorageSlots() {
         return storageSlots;
     }
 }

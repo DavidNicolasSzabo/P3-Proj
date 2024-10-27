@@ -13,4 +13,9 @@ public class InputDevice{
         Integer info = in.nextInt();
         return info;
     }
+    public Boolean getBoolean()
+    {
+        Boolean info = in.nextBoolean();
+        return info;
+    }
 }

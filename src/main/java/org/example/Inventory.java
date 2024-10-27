@@ -13,11 +13,11 @@ public class Inventory {
     public Integer InventoryTotal(){
         Integer total = 0;
         for(StorageInventory s : storageInv){
-            for(String i :s.getStorageSlots()) {
+            for(ArrayList<Item> i :s.getStorageSlots()) {
                 total++;
             }
         }
-        for(String p : playerInv.getInvSlots())
+        for(Item p : playerInv.getInvSlots())
             total++;
         return total;
     }
