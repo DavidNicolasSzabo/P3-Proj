@@ -1,8 +1,11 @@
 package org.example;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.stream.Stream;
+
 public class Inventory {
     private final PlayerInventory playerInv;
-    private ArrayList<StorageInventory> storageInv;
+    private Collection<StorageInventory> storageInv;
     public Inventory(String playerName) {
         playerInv = new PlayerInventory(playerName);
         storageInv = new ArrayList<>();
@@ -13,12 +16,29 @@ public class Inventory {
     public Integer InventoryTotal(){
         Integer total = 0;
         for(StorageInventory s : storageInv){
-            for(ArrayList<Item> i :s.getStorageSlots()) {
-                total++;
-            }
+            total=total+ s.getStorageCapacity();
         }
-        for(Item p : playerInv.getInvSlots())
-            total++;
+            total=total+playerInv.getSlotsNumber();
         return total;
+    }
+    public Collection<StorageInventory> getStorageInv() {
+        return storageInv;
+    }
+    public PlayerInventory getPlayerInv() {
+        return playerInv;
+    }
+    public void sortSlotsInStorages()
+    {
+        for (StorageInventory s : storageInv){
+
+            s.slots=s.slots.stream().sorted(StorageInventory.Slot::compareTo).toList();
+        }
+    }
+    public void sortSlotsInPlayerInventory(){
+        playerInv.invSlots=playerInv.invSlots.stream().sorted(PlayerInventory.Slot::compareTo).toList();
+    }
+    public void SortInventory(){
+        sortSlotsInStorages();
+        sortSlotsInPlayerInventory();
     }
 }

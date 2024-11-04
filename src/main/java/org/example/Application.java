@@ -1,6 +1,8 @@
 package org.example;
-
-
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Application {
     InputDevice inputDevice;
@@ -46,6 +48,28 @@ public class Application {
             default:
                 outputDevice.writeMessage("Invalid function");
         }
+    }
+    public void PrintItemsPerCategory() {
+        Map<String, Integer> itemCounts = new HashMap<>();
+        for (StorageInventory storage : inventory.getStorageInv()) {
+            for (StorageInventory.Slot slot : storage.getStorageSlots()) {
+                for (Item item : slot.items) {
+                    String itemName = item.getName();
+                    itemCounts.put(itemName, itemCounts.getOrDefault(itemName, 0) + 1);
+                }
+            }
+        }
+
+
+        String mess1="Item counts per category:";
+        outputDevice.writeMessage(mess1);
+        String mess2 = "";
+        for (Map.Entry<String, Integer> entry : itemCounts.entrySet()) {
+            String name = entry.getKey();
+            Integer count = entry.getValue();
+            mess2 += "  - " + name + ": " + count + "\n";
+        }
+        outputDevice.writeMessage(mess2);
     }
 
 }
