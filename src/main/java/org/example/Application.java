@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.example.CustomExcept;
 public class Application {
     InputDevice inputDevice;
     OutputDevice outputDevice;
@@ -29,6 +29,7 @@ public class Application {
                 outputDevice.writeMessage("\n");
                 break;
             case "AdS":
+                try{
                 outputDevice.writeMessage("Please input storage name:");
                 String storageName=inputDevice.getString();
                 outputDevice.writeMessage("Please input storage type:");
@@ -42,7 +43,13 @@ public class Application {
                 StorageInventory storageInv = new StorageInventory(storageName,storageSize,stackable,storageType,getssignal);
                 inventory.addStorage(storageInv);
                 outputDevice.writeMessage("\n");
-                break;
+                break;} catch (Exception e) {
+                    if (e.getMessage().equals("Inventory already exists!")) {
+                        outputDevice.writeMessage("Please choose another name:");
+                    }
+                    else
+                        outputDevice.writeMessage(e.getMessage());
+                }
             case "Q":
                 break;
             default:

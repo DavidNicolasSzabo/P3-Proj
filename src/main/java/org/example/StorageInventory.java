@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-
+import org.example.CustomExcept;
 public class StorageInventory extends Storage {
 
     private Integer storageCapacity;
@@ -42,7 +42,6 @@ public class StorageInventory extends Storage {
 
     }
     public StorageInventory(String storageName, Integer storageCapacity, Boolean stackable, String storageType, Boolean getssignal) {
-
         super(storageName, storageType, stackable, getssignal);
         this.storageCapacity = storageCapacity;
         this.slots = new ArrayList<Slot>() ;

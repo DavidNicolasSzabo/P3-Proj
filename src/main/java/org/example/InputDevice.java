@@ -1,21 +1,27 @@
 package org.example;
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class InputDevice{
-    Scanner in = new Scanner(System.in);
+    private InputStream inputStream;
+    private Scanner scanner;
+    public InputDevice(InputStream inputStream){
+        this.inputStream = inputStream;
+        scanner = new Scanner(inputStream);
+    }
     public String getString()
     {
-        String info = in.nextLine();
+        String info = scanner.nextLine();
         return info;
     }
     public Integer getInteger()
     {
-        Integer info = in.nextInt();
+        Integer info = scanner.nextInt();
         return info;
     }
     public Boolean getBoolean()
     {
-        Boolean info = in.nextBoolean();
+        Boolean info = scanner.nextBoolean();
         return info;
     }
 }

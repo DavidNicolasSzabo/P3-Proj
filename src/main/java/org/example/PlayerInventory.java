@@ -60,8 +60,8 @@ public class PlayerInventory  {
             this.items = items;
         }
         //this uses item compare to  because a slot can hold only 1 type of item so you can compare slots by the name and type of item and if both are the same you can compare by size
-        public int compareTo(StorageInventory.Slot o) {
-            Iterator<Item> it1 = items.iterator();
+        public int compareTo(PlayerInventory.Slot o) {
+            try{Iterator<Item> it1 = items.iterator();
             Iterator<Item> it2 = o.items.iterator();
             if(it1.hasNext() && it2.hasNext()) {
                 if(it1.next().compareTo(it2.next()) > 0) {
@@ -80,7 +80,9 @@ public class PlayerInventory  {
             }else if(it1.hasNext() && !it2.hasNext()) {
                 return 1;
             }
-            return 0;
+            return 0;} catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
 
     }

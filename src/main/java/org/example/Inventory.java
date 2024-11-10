@@ -2,7 +2,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Stream;
-
+import org.example.CustomExcept;
 public class Inventory {
     private final PlayerInventory playerInv;
     private Collection<StorageInventory> storageInv;
@@ -11,6 +11,11 @@ public class Inventory {
         storageInv = new ArrayList<>();
     }
     public void addStorage(StorageInventory storage) {
+        for(StorageInventory s : storageInv) {
+            if((s.getName().equals(storage.getName())) && (s.getType().equals(storage.getType()))) {
+                throw new CustomExcept("Inventory already exists!");
+            }
+        }
         storageInv.add(storage);
     }
     public Integer InventoryTotal(){
