@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89385df4-6236-4be9-b05a-64bbd931433b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CustomExcept.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InputDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InputDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/OutputDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/OutputDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PlayerInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StorageInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StorageInventory.java" afterDir="false" />
-    </list>
+    <list default="true" id="89385df4-6236-4be9-b05a-64bbd931433b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +55,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Project",
+    "git-widget-placeholder": "31eb86fa",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
