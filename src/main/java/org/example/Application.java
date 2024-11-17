@@ -15,45 +15,45 @@ public class Application {
     }
 
     public void run(){
-        outputDevice.writeMessage("Please chose a function:\nInventory items total:[IT]\nAdd Inventory:[AdP]\nAdd Storage:[AdS]\nExit:[Q]\n");
+        System.out.println("Please chose a function:\nInventory items total:[IT]\nAdd Inventory:[AdP]\nAdd Storage:[AdS]\nExit:[Q]\n");
         String funcChos=inputDevice.getString();
         switch (funcChos){
             case "IT":
                 String message="" + inventory.InventoryTotal();
-                outputDevice.writeMessage(message);
+                System.out.println(message);
                 break;
             case "AdP":
-                outputDevice.writeMessage("Please input player name:");
+                System.out.println("Please input player name:");
                 String playerName=inputDevice.getString();
                 inventory=new Inventory(playerName);
-                outputDevice.writeMessage("\n");
+                System.out.println();
                 break;
             case "AdS":
                 try{
-                outputDevice.writeMessage("Please input storage name:");
-                String storageName=inputDevice.getString();
-                outputDevice.writeMessage("Please input storage type:");
-                String storageType=inputDevice.getString();
-                outputDevice.writeMessage("Please input storage size:");
-                Integer storageSize=inputDevice.getInteger();
-                outputDevice.writeMessage("Please input storage stack-ability status:");
-                Boolean stackable=inputDevice.getBoolean();
-                outputDevice.writeMessage("Please input storage signal accepting status:");
-                Boolean getssignal=inputDevice.getBoolean();
-                StorageInventory storageInv = new StorageInventory(storageName,storageSize,stackable,storageType,getssignal);
-                inventory.addStorage(storageInv);
-                outputDevice.writeMessage("\n");
-                break;} catch (Exception e) {
+                    System.out.println("Please input storage name:");
+                    String storageName=inputDevice.getString();
+                    System.out.println("Please input storage type:");
+                    String storageType=inputDevice.getString();
+                    System.out.println("Please input storage size:");
+                    Integer storageSize=inputDevice.getInteger();
+                    System.out.println("Please input storage stack-ability status:");
+                    Boolean stackable=inputDevice.getBoolean();
+                    System.out.println("Please input storage signal accepting status:");
+                    Boolean getssignal=inputDevice.getBoolean();
+                    StorageInventory storageInv = new StorageInventory(storageName,storageSize,stackable,storageType,getssignal);
+                    inventory.addStorage(storageInv);
+                    System.out.println();
+                } catch (CustomExcept e) {
                     if (e.getMessage().equals("Inventory already exists!")) {
-                        outputDevice.writeMessage("Please choose another name:");
+                        System.out.println("Please choose another name:");
                     }
                     else
-                        outputDevice.writeMessage(e.getMessage());
+                        System.out.println(e.getMessage());
                 }
             case "Q":
                 break;
             default:
-                outputDevice.writeMessage("Invalid function");
+                System.out.println("Invalid function");
         }
     }
     public void PrintItemsPerCategory() {

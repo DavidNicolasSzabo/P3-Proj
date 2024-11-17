@@ -10,7 +10,7 @@ public class Inventory {
         playerInv = new PlayerInventory(playerName);
         storageInv = new ArrayList<>();
     }
-    public void addStorage(StorageInventory storage) {
+    public void addStorage(StorageInventory storage) throws CustomExcept {
         for(StorageInventory s : storageInv) {
             if((s.getName().equals(storage.getName())) && (s.getType().equals(storage.getType()))) {
                 throw new CustomExcept("Inventory already exists!");

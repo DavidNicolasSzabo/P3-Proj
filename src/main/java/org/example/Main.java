@@ -12,7 +12,7 @@ public class Main {
         InputDevice input=new InputDevice(System.in);
         FileOutputStream fileout= null;
         try {
-            fileout = new FileOutputStream("Untitled1/src/main/java/org.example/Output.txt");
+            fileout = new FileOutputStream("Output.txt");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
