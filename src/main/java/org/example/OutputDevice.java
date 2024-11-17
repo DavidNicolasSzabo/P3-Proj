@@ -16,4 +16,13 @@ public class OutputDevice {
             e.printStackTrace();
         }
     }
+    public void close() {
+        try {
+            if (outputStream != null) {
+                outputStream.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

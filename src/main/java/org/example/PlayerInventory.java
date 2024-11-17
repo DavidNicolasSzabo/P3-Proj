@@ -10,6 +10,7 @@ public class PlayerInventory  {
     private final Integer slotsNumber=36;
     public PlayerInventory(String playerName) {
         this.playerName = playerName;
+        this.invSlots = new ArrayList<Slot>();
         for (int i = 0; i < slotsNumber; i++) {
             PlayerInventory.Slot slot = new PlayerInventory.Slot(new ArrayList<Item>());
             invSlots.add(slot);

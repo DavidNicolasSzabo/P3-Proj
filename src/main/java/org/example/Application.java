@@ -17,47 +17,55 @@ public class Application {
     public void run(){
         System.out.println("Please chose a function:\nInventory items total:[IT]\nAdd Inventory:[AdP]\nAdd Storage:[AdS]\nExit:[Q]\n");
         String funcChos=inputDevice.getString();
-        switch (funcChos){
-            case "IT":
-                String message="" + inventory.InventoryTotal();
-                System.out.println(message);
-                break;
-            case "AdP":
-                System.out.println("Please input player name:");
-                String playerName=inputDevice.getString();
-                inventory=new Inventory(playerName);
-                System.out.println();
-                break;
-            case "AdS":
-                try{
-                    System.out.println("Please input storage name:");
-                    String storageName=inputDevice.getString();
-                    System.out.println("Please input storage type:");
-                    String storageType=inputDevice.getString();
-                    System.out.println("Please input storage size:");
-                    Integer storageSize=inputDevice.getInteger();
-                    System.out.println("Please input storage stack-ability status:");
-                    Boolean stackable=inputDevice.getBoolean();
-                    System.out.println("Please input storage signal accepting status:");
-                    Boolean getssignal=inputDevice.getBoolean();
-                    StorageInventory storageInv = new StorageInventory(storageName,storageSize,stackable,storageType,getssignal);
-                    inventory.addStorage(storageInv);
+        while(!funcChos.equals("Q")){
+
+            switch (funcChos){
+                case "IT":
+                    String message="" + inventory.InventoryTotal();
+                    System.out.println(message);
+                case "AdP":
+                    System.out.println("Please input player name:");
+                    String playerName=inputDevice.getString();
+                    inventory=new Inventory(playerName);
                     System.out.println();
-                } catch (CustomExcept e) {
-                    if (e.getMessage().equals("Inventory already exists!")) {
-                        System.out.println("Please choose another name:");
+                case "AdS":
+                    try{
+                        System.out.println("Please input storage name:");
+                        String storageName=inputDevice.getString();
+                        System.out.println("Please input storage type:");
+                        String storageType=inputDevice.getString();
+                        System.out.println("Please input storage size:");
+                        Integer storageSize=inputDevice.getInteger();
+                        System.out.println("Please input storage stack-ability status:");
+                        Boolean stackable=inputDevice.getBoolean();
+                        System.out.println("Please input storage signal accepting status:");
+                        Boolean getssignal=inputDevice.getBoolean();
+                        StorageInventory storageInv = new StorageInventory(storageName,storageSize,stackable,storageType,getssignal);
+                        inventory.addStorage(storageInv);
+                        System.out.println();
+                        PrintItemsPerCategory();
+                    } catch (CustomExcept e) {
+                        if (e.getMessage().equals("Inventory already exists!")) {
+                            System.out.println("Please choose another name:");
+                        }
+                        else
+                            System.out.println(e.getMessage());
                     }
-                    else
-                        System.out.println(e.getMessage());
-                }
-            case "Q":
-                break;
-            default:
-                System.out.println("Invalid function");
+                case "Q":
+                    break;
+                default:
+                    System.out.println("Invalid function");
+            }
+            System.out.println("Please chose a function:\nInventory items total:[IT]\nAdd Inventory:[AdP]\nAdd Storage:[AdS]\nExit:[Q]\n");
+            funcChos=inputDevice.getString();
         }
+
     }
     public void PrintItemsPerCategory() {
         Map<String, Integer> itemCounts = new HashMap<>();
+        String mess3="";
+        mess3 += inventory.getPlayerInv().getPlayerName();
+        outputDevice.writeMessage(mess3);
         for (StorageInventory storage : inventory.getStorageInv()) {
             for (StorageInventory.Slot slot : storage.getStorageSlots()) {
                 for (Item item : slot.items) {
