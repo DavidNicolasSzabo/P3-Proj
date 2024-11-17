@@ -23,11 +23,15 @@ public class Application {
                 case "IT":
                     String message="" + inventory.InventoryTotal();
                     System.out.println(message);
+                    break;
+
                 case "AdP":
                     System.out.println("Please input player name:");
                     String playerName=inputDevice.getString();
                     inventory=new Inventory(playerName);
                     System.out.println();
+                    break;
+
                 case "AdS":
                     try{
                         System.out.println("Please input storage name:");
@@ -44,15 +48,19 @@ public class Application {
                         inventory.addStorage(storageInv);
                         System.out.println();
                         PrintItemsPerCategory();
+                        break;
                     } catch (CustomExcept e) {
                         if (e.getMessage().equals("Inventory already exists!")) {
                             System.out.println("Please choose another name:");
+                            break;
+
                         }
                         else
                             System.out.println(e.getMessage());
+                        break;
                     }
                 case "Q":
-                    break;
+                    return;
                 default:
                     System.out.println("Invalid function");
             }
