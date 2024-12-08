@@ -1,14 +1,13 @@
 package org.example;
-import java.util.ArrayList;
-import java.util.Collection;
+
 import java.util.HashMap;
 import java.util.Map;
-import org.example.CustomExcept;
 public class Application {
     InputDevice inputDevice;
     OutputDevice outputDevice;
     Inventory inventory;
-    public Application(InputDevice in, OutputDevice out) {
+
+    public Application(InputDevice in, OutputDevice out, String UUID, String Playername) {
         this.inputDevice = in;
         this.outputDevice = out;
 
@@ -53,7 +52,6 @@ public class Application {
                         if (e.getMessage().equals("Inventory already exists!")) {
                             System.out.println("Please choose another name:");
                             break;
-
                         }
                         else
                             System.out.println(e.getMessage());
@@ -72,7 +70,7 @@ public class Application {
     public void PrintItemsPerCategory() {
         Map<String, Integer> itemCounts = new HashMap<>();
         String mess3="";
-        mess3 += inventory.getPlayerInv().getPlayerName();
+        mess3 += inventory.getPlayerInv().getPlayerName() + "\n";
         outputDevice.writeMessage(mess3);
         for (StorageInventory storage : inventory.getStorageInv()) {
             for (StorageInventory.Slot slot : storage.getStorageSlots()) {

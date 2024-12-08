@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-
+import java.util.*;
 public class PlayerInventory  {
     private String playerName;
     Collection<Slot> invSlots;
@@ -12,7 +9,7 @@ public class PlayerInventory  {
         this.playerName = playerName;
         this.invSlots = new ArrayList<Slot>();
         for (int i = 0; i < slotsNumber; i++) {
-            PlayerInventory.Slot slot = new PlayerInventory.Slot(new ArrayList<Item>());
+            PlayerInventory.Slot slot = new PlayerInventory.Slot(new ArrayList<Item>(), i, Item.Stacksize.SIXTYFOUR);
             invSlots.add(slot);
         }
     }
@@ -25,7 +22,8 @@ public class PlayerInventory  {
     public Integer getSlotsNumber() {
         return slotsNumber;
     }
-    public String addItems(Item item, Integer stacksize, Integer quantity) {
+
+    public void addItems(Item item, Integer quantity) {
         Integer index=0;
         for (PlayerInventory.Slot slot : invSlots) {
             if (slot.items.contains(item) && slot.items.size()<slot.stacksize.getstackValue() && quantity>0) {
@@ -38,7 +36,8 @@ public class PlayerInventory  {
                     index++;
                 }
             } else if (slot.items.isEmpty() && quantity>0) {
-                for(int i=0;i<quantity && i<stacksize;i++) {
+                slot.updateStacksize(item.getStack());
+                for (int i = 0; i < quantity && i < item.stack.getstackValue(); i++) {
                     slot.items.add(item);
                     quantity--;
                 }
@@ -46,19 +45,21 @@ public class PlayerInventory  {
                     index++;
                 }
             }else if (index==invSlots.size()-1 && slot.items.size()>0 && quantity>0) {
-                return "Full Storage";
-            }else if(quantity==0)
-            {break;
+                return;
+            }else if(quantity==0) {
+                return;
             }
         }
-        return "Done";
     }
 
     protected static class Slot{
-        Collection<Item> items;
+        List<Item> items;
+        Integer index;
         Item.Stacksize stacksize;
-        public Slot(Collection<Item> items) {
+
+        public Slot(List<Item> items, Integer index, Item.Stacksize stacksize) {
             this.items = items;
+            this.index = index;
         }
         //this uses item compare to  because a slot can hold only 1 type of item so you can compare slots by the name and type of item and if both are the same you can compare by size
         public int compareTo(PlayerInventory.Slot o) {
@@ -84,6 +85,29 @@ public class PlayerInventory  {
             return 0;} catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }
+
+        public void removeItemFromSlot(Item item, Integer quantity) {
+            List<Item> itemList = (List<Item>) items;
+            ListIterator<Item> it = itemList.listIterator(itemList.size()); // Start at the end
+            while (it.hasPrevious() && quantity > 0) {
+                Item currentItem = it.previous();
+                if (currentItem.equals(item)) {
+                    currentItem.RemoveItem();
+                    it.remove();
+                    quantity--;
+                }
+            }
+        }
+
+        public void clearSlot() {
+            for (Item item : items) {
+                item.RemoveItem();
+            }
+        }
+
+        public void updateStacksize(Item.Stacksize stacksize) {
+            this.stacksize = stacksize;
         }
 
     }

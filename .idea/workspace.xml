@@ -1,18 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89385df4-6236-4be9-b05a-64bbd931433b" name="Changes" comment="">
+    <list default="true" id="89385df4-6236-4be9-b05a-64bbd931433b" name="Changes" comment="git add Item.java Signable.java Stackable.java Storage.java uiDesigner.xml">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dropper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/EnderChest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Hopper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/NameMC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/NormalChest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ShulkerBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TrappedChest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/OutputDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/OutputDevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PlayerInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StorageInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StorageInventory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Project" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Project" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,6 +123,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.D:/Project/build.gradle.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.Load Gradle Dependencies.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Projectfunc&quot;,
@@ -81,10 +136,18 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;D:/Project/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\src\main\resources" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -117,7 +180,41 @@
       <workItem from="1731409356193" duration="88000" />
       <workItem from="1731759083789" duration="3038000" />
       <workItem from="1731774437121" duration="503000" />
-      <workItem from="1731826750238" duration="13359000" />
+      <workItem from="1731826750238" duration="15011000" />
+      <workItem from="1732013831533" duration="2391000" />
+      <workItem from="1732116091857" duration="3167000" />
+      <workItem from="1732121595793" duration="601000" />
+      <workItem from="1732172299590" duration="1255000" />
+      <workItem from="1732544611417" duration="3805000" />
+      <workItem from="1732556409557" duration="1243000" />
+      <workItem from="1732560732747" duration="33000" />
+      <workItem from="1732690078433" duration="207000" />
+      <workItem from="1732702068502" duration="815000" />
+      <workItem from="1732730967519" duration="1314000" />
+      <workItem from="1732785072466" duration="3435000" />
+      <workItem from="1732863473214" duration="3098000" />
+      <workItem from="1732871981004" duration="11657000" />
+      <workItem from="1732900191395" duration="767000" />
+      <workItem from="1732905178460" duration="393000" />
+      <workItem from="1732962194569" duration="14740000" />
+      <workItem from="1733049755693" duration="10261000" />
+      <workItem from="1733079164065" duration="3000" />
+      <workItem from="1733147401302" duration="5396000" />
+      <workItem from="1733156214253" duration="49000" />
+      <workItem from="1733156270463" duration="1159000" />
+      <workItem from="1733157438508" duration="1091000" />
+      <workItem from="1733159807900" duration="4782000" />
+      <workItem from="1733223131292" duration="737000" />
+      <workItem from="1733229889615" duration="13000" />
+      <workItem from="1733323933395" duration="5095000" />
+      <workItem from="1733340999177" duration="430000" />
+      <workItem from="1733380392197" duration="7157000" />
+      <workItem from="1733390379655" duration="804000" />
+      <workItem from="1733391194866" duration="4336000" />
+      <workItem from="1733412187409" duration="3576000" />
+      <workItem from="1733417163348" duration="2009000" />
+      <workItem from="1733484396183" duration="10676000" />
+      <workItem from="1733571531852" duration="17046000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -180,5 +277,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project$D__Project_build_gradle.ic" NAME="$PROJECT_DIR$/build.gradle Coverage Results" MODIFIED="1733415913942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

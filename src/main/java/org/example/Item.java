@@ -4,6 +4,7 @@ public class Item implements Stackable, Comparable<Item> {
     protected String item_name;
     protected String item_type;
     protected Boolean stackable;
+    protected Stacksize stack;
     public enum Stacksize {
         ONE(1),SIXTEEN(16),SIXTYFOUR(64);
         private final int value;
@@ -16,10 +17,12 @@ public class Item implements Stackable, Comparable<Item> {
             return value;
         }
     }
-    public Item(String item_name, String item_type, Boolean stackable) {
+
+    public Item(String item_name, String item_type, Boolean stackable, Stacksize stack) {
         this.item_name = item_name;
         this.item_type = item_type;
         this.stackable = stackable;
+        this.stack = stack;
     }
     public String getItem_name() {
         return item_name;
@@ -54,5 +57,17 @@ public class Item implements Stackable, Comparable<Item> {
     }
     public String getType(){
         return item_type;
+    }
+
+    public void RemoveItem() {
+        this.stackable = null;
+        this.item_name = null;
+        this.item_type = null;
+        this.stack = null;
+
+    }
+
+    public Stacksize getStack() {
+        return stack;
     }
 }

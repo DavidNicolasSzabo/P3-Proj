@@ -1,8 +1,7 @@
 package org.example;
+
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.stream.Stream;
-import org.example.CustomExcept;
 public class Inventory {
     private final PlayerInventory playerInv;
     private Collection<StorageInventory> storageInv;

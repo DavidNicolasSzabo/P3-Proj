@@ -1,0 +1,90 @@
+plugins {
+    id 'fabric-loom' version '1.9-SNAPSHOT'
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://maven.fabricmc.net/" }
+}
+
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        "Project" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    // Replace with your Minecraft version, mappings, and Fabric loader version
+    minecraft "com.mojang:minecraft:1.21.1"
+    mappings "net.fabricmc:yarn:1.21.1+build.3:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.16.9"
+
+    // Fabric API
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.110.0+1.21.1"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.15.2"
+    implementation "com.fasterxml.jackson.core:jackson-core:2.15.2"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:2.15.2"
+
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    // Include sources JAR for publishing and compatibility
+    withSourcesJar()
+
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.base.archivesName.get()}" }
+    }
+}
+
+// Configure Maven publication
+publishing {
+    publications {
+        create("Project", MavenPublication) {
+            artifactId = project.archives_base_name
+            from components.java
+        }
+    }
+
+    // Add publishing repositories here if necessary
+    repositories {
+        // Example:
+         maven {
+             name = "GitHubPackages"
+             url = uri("https://maven.pkg.github.com/DavidNicolasSzabo/P3-Proj")
+             credentials {
+                 username = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
+                 password = project.findProperty("gpr.token") ?: System.getenv("TOKEN_GITHUB")
+             }
+         }
+
+    }
+}
