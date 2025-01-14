@@ -1,0 +1,16 @@
+pluginManagement {
+    repositories {
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+            content {
+                includeGroup 'fabric-loom'
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'Project_Final'
+include 'client' ,'server'
+

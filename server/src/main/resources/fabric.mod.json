@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "Storage_Logging",
+	"version": "${version}",
+	"name": "Storage Logging(Server)",
+	"description": "This is the server side of the mod! This mod carries all the logic of the inventory logging and it is resource intensive! Use with the client mod if you want to use it on single player! Else recommended to keep it only on the server!  If the mod does not work you might need in java versions liberica full JDK 21.0.5",
+	"authors": [
+		"da23335"
+	],
+	"contact": {
+		"sources": "https://github.com/DavidNicolasSzabo/P3-Proj.git"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/My mod.png",
+	"environment": "server",
+	"entrypoints": {
+		"server": [
+			"Proj.Server.server_mod"
+		]
+	},
+	"depends": {
+		"fabricloader": "0.16.9",
+		"minecraft": "1.21.1",
+		"java": ">=21",
+		"fabric-api": "0.110.0+1.21.1"
+	},
+	"suggests": {
+		"another-mod": "Storage Logging(Client)"
+	}
+}

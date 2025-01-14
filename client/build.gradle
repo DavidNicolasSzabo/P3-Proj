@@ -1,0 +1,81 @@
+plugins {
+    id 'java'
+    id 'fabric-loom' version '1.9-SNAPSHOT'
+    id 'maven-publish'
+    id 'org.javamodularity.moduleplugin' version '1.8.12'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group = 'net.fabricmc'
+version = '1.0.0'
+
+repositories {
+    maven { url "https://maven.fabricmc.net/" }
+    mavenCentral()
+
+}
+
+loom {
+    mods {
+        "project_final_client" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.1"
+    mappings "net.fabricmc:yarn:1.21.1+build.3:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.16.9"
+    modImplementation ("net.fabricmc.fabric-api:fabric-api:${project.ext.fabric_version}"){
+        exclude group: 'net.fabricmc', module: 'fabric-commands-v0'
+        exclude group: 'net.fabricmc', module: 'fabric-content-registries-v0'
+    }
+    implementation 'org.apache.logging.log4j:log4j-api:2.17.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.2'
+    implementation "org.lwjgl:lwjgl-glfw:3.3.0"
+    implementation "org.lwjgl:lwjgl:3.3.0"
+    implementation "org.lwjgl:lwjgl-opengl:3.3.0"
+    implementation "org.openjfx:javafx-controls:21"
+    implementation "org.openjfx:javafx-fxml:21"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'net.fabricmc.MainClass'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/DavidNicolasSzabo/P3-Proj")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
+            }
+        }
+    }
+}

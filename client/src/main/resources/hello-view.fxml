@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proj.Client.HelloController">
+    <ScrollPane fx:id="contentScrollPane" fitToHeight="true" fitToWidth="true" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="80">
+        <VBox fx:id="contentVBox" spacing="10" />
+    </ScrollPane>
+
+    <HBox AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" spacing="10">
+        <Button text="Refresh" fx:id="refreshButton" />
+        <TextField fx:id="cassetteField" promptText="Enter something" />
+        <Button text="Add Friend" fx:id="addFriendButton" />
+        <Button text="Clear Warnings" fx:id="clearWarningsButton" />
+    </HBox>
+</AnchorPane>
