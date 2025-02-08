@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "storage-logging-client",
+	"version": "${version}",
+	"name": "Storage Logging (client)",
+	"description": "This is the client side of the mod! Will not work unless the server has the server side mod! Can be used with server side mod on single player, but not recommended unless you have the computing power. Do not worry about the opening screen! That is the functionality of the mod!This mod is a project that uses JavaFX and that's why it will open a screen for visualisation of data! The mod does not work without java version liberica full JDK 21.0.5!",
+	"authors": [
+		"da23335"
+	],
+	"contact": {
+		"sources": "https://github.com/DavidNicolasSzabo/P3-Proj.git"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/storage-logging-client/My mod.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.da23335.StorageLoggingclient"
+		],
+		"client": [
+			"net.da23335.Client"
+		]
+
+	},
+	"mixins": [
+		"storage-logging-client.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
